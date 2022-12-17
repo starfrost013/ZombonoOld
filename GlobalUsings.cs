@@ -16,3 +16,4 @@ global using static LightningBase.SDL_image;
 global using static LightningBase.SDL_mixer;
 global using static LightningBase.SDL_ttf;
 global using static LightningGL.Lightning;
+global using NuCore.Utilities;
