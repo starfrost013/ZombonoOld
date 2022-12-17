@@ -105,7 +105,7 @@
 		</Content>
 		<Content Include="$(ProgramFiles)/Lightning Software Development Kit/SDL2_image.dll">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-			<Link>SDL2_image-x64.dll</Link>
+			<Link>SDL2_image.dll</Link>
 		</Content>
 		<Content Include="$(ProgramFiles)/Lightning Software Development Kit/Libraries/SDL2_ttf-v2.0.18-x64.dll">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -113,7 +113,11 @@
 		</Content>
 		<Content Include="$(ProgramFiles)/Lightning Software Development Kit/SDL2_mixer.dll">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-			<Link>SDL2_mixer-x64.dll</Link>
+			<Link>SDL2_mixer.dll</Link>
+		</Content>
+		<Content Include="$(ProgramFiles)/Lightning Software Development Kit/freetype.dll">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<Link>freetype.dll</Link>
 		</Content>
 	</ItemGroup>
 

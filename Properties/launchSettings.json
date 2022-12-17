@@ -1,8 +1,7 @@
 {
   "profiles": {
     "Zombono": {
-      "commandName": "Project",
-      "commandLineArgs": "-server"
+      "commandName": "Project"
     }
   }
 }
