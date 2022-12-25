@@ -122,6 +122,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Folder Include="Client\" />
 	  <Folder Include="Server\" />
 	</ItemGroup>
 

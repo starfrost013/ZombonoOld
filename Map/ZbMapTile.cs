@@ -6,17 +6,18 @@ namespace Zombono
     /// </summary>
     internal class ZbMapTile : Renderable
     {
-        internal int Id { get; set; }
+        internal ushort Id { get; set; }
 
-        public ZbMapTile(string name, int id) : base(name)
+        public ZbMapTile(string name, ushort id) : base(name)
         {
             Id = id;
         }
 
         public override void Draw()
         {
-            // this will pull the global spritesheet (when it's done)
-            base.Draw();
+            Debug.Assert(SharedAssets.MainSpritesheet != null); // already loaded before here
+            SharedAssets.MainSpritesheet.Index = Id;
+            SharedAssets.MainSpritesheet.DrawFrame();
         }
 
         internal byte[] ToByteArray() => BitConverter.GetBytes(Id);

@@ -1,4 +1,6 @@
 ﻿
+using System.Reflection.PortableExecutable;
+
 namespace Zombono
 {
     /// <summary>
@@ -10,9 +12,9 @@ namespace Zombono
     {
         public const string Magic = "iwilldie";
 
-        public const int FormatVersionMajor = 1;
+        public const byte FormatVersionMajor = 1;
 
-        public const int FormatVersionMinor = 0;
+        public const byte FormatVersionMinor = 0;
 
         public string MapName { get; set; }
 
@@ -36,6 +38,37 @@ namespace Zombono
             MapAuthor = "***PLEASE FILL IN MAP AUTHOR***";
             MapDescription = "***PLEASE FILL IN MAP DESCRIPTION***";
             MapTilesetPath = string.Empty;
+        }
+
+        public static MapFileHeader Read(BinaryReader stream)
+        {
+            string magic = stream.ReadString();
+
+            if (magic != Magic)
+            {
+                NCError.ShowErrorBox($"Invalid map file - magic not found (expected {Magic}, got {magic}!)", 2000, 
+                    "MapFileHeader::Read - failed to find format indicator");
+            }
+
+            byte formatVersionMajor = stream.ReadByte();
+            byte formatVersionMinor = stream.ReadByte(); 
+
+            if (formatVersionMajor != FormatVersionMajor
+                || formatVersionMinor != FormatVersionMinor)
+            {
+                NCError.ShowErrorBox($"Invalid map file - incorrect file format version (expected {FormatVersionMajor}.{FormatVersionMinor}, " +
+                    $"got {formatVersionMajor}.{formatVersionMinor}!)", 2001, "MapFileHeader::Read - failed to find format indicator");
+            }
+
+            return new MapFileHeader
+            {
+                MapName = stream.ReadString(),
+                MapAuthor = stream.ReadString(),
+                MapDescription = stream.ReadString(),
+                MapTilesetPath = stream.ReadString(),
+                MapWidth = stream.ReadInt32(),
+                MapHeight = stream.ReadInt32(),
+            };
         }
     }
 }
