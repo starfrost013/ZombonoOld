@@ -70,5 +70,18 @@ namespace Zombono
                 MapHeight = stream.ReadInt32(),
             };
         }
+
+        public MapFileHeader Write(BinaryWriter stream)
+        {
+            stream.Write(Magic);
+            stream.Write(FormatVersionMajor);
+            stream.Write(FormatVersionMinor);
+            stream.Write(MapName);
+            stream.Write(MapAuthor);
+            stream.Write(MapDescription);
+            stream.Write(MapTilesetPath);
+            stream.Write(MapWidth);
+            stream.Write(MapHeight);
+        }
     }
 }

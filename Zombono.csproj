@@ -123,6 +123,7 @@
 
 	<ItemGroup>
 	  <Folder Include="Client\" />
+	  <Folder Include="Content\Maps\" />
 	  <Folder Include="Server\" />
 	</ItemGroup>
 

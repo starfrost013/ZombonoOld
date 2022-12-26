@@ -61,9 +61,36 @@
             {
                 NCError.ShowErrorBox($"An error occurred loading map tiles.", 2403, "An exception occurred in MapFile::Read", NCErrorSeverity.FatalError, ex);
             }
-
-            
         }
 
+        public void Write()
+        {
+            if (!Uri.IsWellFormedUriString(Path, UriKind.RelativeOrAbsolute))
+            {
+                NCError.ShowErrorBox($"Tried to write to invalid path {Path}!", 2405, 
+                    "Call to Uri::IsWellFormedUriStrig in MapFile::Write returned FALSE", NCErrorSeverity.Error);
+                return;
+            }
+
+            int mapTileCount = Header.MapHeight * Header.MapWidth;
+
+            if (Tiles.Count != mapTileCount)
+            {
+                NCError.ShowErrorBox($"Invalid number of tiles ({Tiles.Count} recorded, vs {mapTileCount} ({Header.MapWidth}x{Header.MapHeight})", 2406,
+                    "MapTile::Tiles::Count is not equal to (MapTileHeader::MapHeight * MapTileHeader::MapWidth)", NCErrorSeverity.Error);
+                return;
+            }
+
+            using (BinaryWriter bw = new(new FileStream(Path, FileMode.OpenOrCreate)))
+            {
+                Header.Write(bw);
+
+                // they get loaded in row order
+                foreach (ZbMapTile mapTile in Tiles)
+                {
+                    bw.Write(mapTile.Id);
+                }
+            }
+        }
     }
 }
