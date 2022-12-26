@@ -71,7 +71,7 @@ namespace Zombono
             };
         }
 
-        public MapFileHeader Write(BinaryWriter stream)
+        public void Write(BinaryWriter stream)
         {
             stream.Write(Magic);
             stream.Write(FormatVersionMajor);
