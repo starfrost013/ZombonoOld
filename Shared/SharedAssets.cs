@@ -19,7 +19,7 @@
             try
             {
                 TextureAtlas mainSpritesheet = new("MainSpritesheet", new(SPRITESHEET_TILE_WIDTH, SPRITESHEET_TILE_HEIGHT), new(SPRITESHEET_SHEET_WIDTH, SPRITESHEET_SHEET_HEIGHT));
-                mainSpritesheet.Path = @"Content\terrain.png";
+                mainSpritesheet.Path = @"Content\Graphics\terrain.png";
 
                 TextureManager.AddAsset(mainSpritesheet);
 

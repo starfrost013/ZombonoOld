@@ -17,6 +17,7 @@ namespace Zombono
         {
             Debug.Assert(SharedAssets.MainSpritesheet != null); // already loaded before here
             SharedAssets.MainSpritesheet.Index = Id;
+            SharedAssets.MainSpritesheet.Position = Position;
             SharedAssets.MainSpritesheet.DrawFrame();
         }
 

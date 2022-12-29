@@ -32,19 +32,7 @@ namespace Zombono.Scenes
                 Lightning.Shutdown();
             }
 
-            // again temporary (insert these into the map lol, just to display them)
-            for (int tileId = 0; tileId < TestMap.Tiles.Count; tileId++) 
-            {
-                ZbMapTile mapTile = TestMap.Tiles[tileId];
 
-                int row = tileId / SharedAssets.SPRITESHEET_SHEET_HEIGHT;
-
-                // set position
-                mapTile.Position = new(0 + (SharedAssets.SPRITESHEET_TILE_WIDTH * (row % SharedAssets.SPRITESHEET_SHEET_WIDTH)), SharedAssets.SPRITESHEET_TILE_HEIGHT * row);
-
-                // add it
-                Lightning.Renderer.AddRenderable(mapTile); // this just draws a texture atlas a lot of times
-            }
         }
 
         public override void Shutdown()
@@ -54,7 +42,23 @@ namespace Zombono.Scenes
 
         public override void SwitchTo(Scene oldScene)
         {
-            TextManager.DrawText("Hello World!", "DebugFont", new Vector2(300, 300), Color.Red);
+            // again temporary (insert these into the map lol, just to display them)
+            for (int tileId = 0; tileId < TestMap.Tiles.Count; tileId++)
+            {
+                ZbMapTile mapTile = TestMap.Tiles[tileId];
+
+                int row = tileId / TestMap.Header.MapHeight;
+
+                // set position
+                mapTile.Position = new(0 + (SharedAssets.SPRITESHEET_TILE_WIDTH * (tileId % SharedAssets.SPRITESHEET_SHEET_WIDTH)), SharedAssets.SPRITESHEET_TILE_HEIGHT * row);
+
+                NCLogging.Log(mapTile.Position.ToString());
+
+                // add it
+                Lightning.Renderer.AddRenderable(mapTile); // this just draws a texture atlas a lot of times
+            }
+
+            Lightning.Renderer.SetCurrentCamera(new Camera(CameraType.Follow));
         }
 
         public override void SwitchFrom(Scene newScene)
@@ -64,6 +68,10 @@ namespace Zombono.Scenes
 
         public override void Render()
         {
+
+
+            TextManager.DrawText("Map Prototype Scene - this is a demonstration of the map loader", "DebugFont", new(300, 300), Color.Yellow);
+
 
         }
     }

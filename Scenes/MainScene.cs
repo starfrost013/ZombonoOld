@@ -22,7 +22,7 @@ namespace Zombono
 
         public override void SwitchTo(Scene oldScene)
         {
-            TextManager.DrawText("Hello World!", "DebugFont", new Vector2(300, 300), Color.Red);
+            TextManager.DrawText("MainScene - the game is here", "DebugFont", new(300, 300), Color.Green);
         }
 
         public override void SwitchFrom(Scene newScene)

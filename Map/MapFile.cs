@@ -56,6 +56,10 @@
                 }
 
                 // todo: read the ZbObjects!!!!!!!
+
+                NCLogging.Log("Loading ZbObjects UNIMPLEMENTED (V0.00!!!!)");
+
+                Loaded = true; 
             }
             catch (Exception ex)
             {

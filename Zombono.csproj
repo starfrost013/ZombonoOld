@@ -31,6 +31,12 @@
 		<None Remove="$(ProgramFiles)/Lightning Software Development Kit/SDL2_image.dll" />
 		<None Remove="$(ProgramFiles)/Lightning Software Development Kit/SDL2_mixer.dll" />
 		<None Remove="$(ProgramFiles)/Lightning Software Development Kit/Libraries/SDL2_ttf-v2.0.18-x64.dll" />
+		<None Remove="Content\Graphics\Editor\Icon.png" />
+		<None Remove="Content\Graphics\Game\ci.png" />
+		<None Remove="Content\Graphics\Game\Loading.png" />
+		<None Remove="Content\Graphics\Game\TempMission.png" />
+		<None Remove="Content\Graphics\Start\Legal.png" />
+		<None Remove="Content\Graphics\terrain.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -119,12 +125,29 @@
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 			<Link>freetype.dll</Link>
 		</Content>
+		<Content Include="Content\Graphics\Editor\Icon.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Content\Graphics\Game\ci.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Content\Graphics\Game\Loading.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Content\Graphics\Game\TempMission.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Content\Graphics\Start\Legal.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Content\Graphics\terrain.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Folder Include="Client\" />
 	  <Folder Include="Content\Maps\" />
-	  <Folder Include="Server\" />
 	</ItemGroup>
 
 	<ItemGroup>
