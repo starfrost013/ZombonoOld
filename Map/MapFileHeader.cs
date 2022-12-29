@@ -14,8 +14,9 @@ namespace Zombono
 
         public const byte FormatVersionMajor = 1;
 
-        public const byte FormatVersionMinor = 0;
+        public const byte FormatVersionMinor = 1;
 
+        public DateTime Timestamp { get; set; }
         public string MapName { get; set; }
 
         public string MapAuthor { get; set; }
@@ -62,6 +63,7 @@ namespace Zombono
 
             return new MapFileHeader
             {
+                Timestamp = new DateTime(1970, 1, 1, 1, 1, 1).AddSeconds(stream.ReadInt64()),
                 MapName = stream.ReadString(),
                 MapAuthor = stream.ReadString(),
                 MapDescription = stream.ReadString(),
@@ -76,6 +78,7 @@ namespace Zombono
             stream.Write(Magic);
             stream.Write(FormatVersionMajor);
             stream.Write(FormatVersionMinor);
+            stream.Write(DateTimeOffset.Now.ToUnixTimeSeconds());
             stream.Write(MapName);
             stream.Write(MapAuthor);
             stream.Write(MapDescription);
