@@ -152,19 +152,19 @@
 
 	<ItemGroup>
 	  <Reference Include="LightningBase">
-	    <HintPath>..\..\..\Program Files\Lightning Software Development Kit\LightningBase.dll</HintPath>
+	    <HintPath>$(ProgramFiles)\Lightning Software Development Kit\LightningBase.dll</HintPath>
 	  </Reference>
 	  <Reference Include="LightningGL">
-	    <HintPath>..\..\..\Program Files\Lightning Software Development Kit\LightningGL.dll</HintPath>
+	    <HintPath>$(ProgramFiles)\Lightning Software Development Kit\LightningGL.dll</HintPath>
 	  </Reference>
 	  <Reference Include="LightningPackager">
-	    <HintPath>..\..\..\Program Files\Lightning Software Development Kit\LightningPackager.dll</HintPath>
+	    <HintPath>$(ProgramFiles)\Lightning Software Development Kit\LightningPackager.dll</HintPath>
 	  </Reference>
 	  <Reference Include="NuCore.Utilities">
-	    <HintPath>..\..\..\Program Files\Lightning Software Development Kit\NuCore.Utilities.dll</HintPath>
+	    <HintPath>$(ProgramFiles)\Lightning Software Development Kit\NuCore.Utilities.dll</HintPath>
 	  </Reference>
 	  <Reference Include="NuCore.Utilities.Lightning">
-	    <HintPath>..\..\..\Program Files\Lightning Software Development Kit\NuCore.Utilities.Lightning.dll</HintPath>
+	    <HintPath>$(ProgramFiles)\Lightning Software Development Kit\NuCore.Utilities.Lightning.dll</HintPath>
 	  </Reference>
 	</ItemGroup>
 </Project>
