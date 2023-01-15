@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zombono", "Zombono.csproj", "{79F212E4-855A-4776-BC8B-FB4097041BFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeditor", "..\Zeditor\Zeditor.csproj", "{BA1C5FF3-1508-4B4F-A8D5-3F14B8E532AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeditor", "Zeditor\Zeditor.csproj", "{BA1C5FF3-1508-4B4F-A8D5-3F14B8E532AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
