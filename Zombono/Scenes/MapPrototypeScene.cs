@@ -59,6 +59,8 @@ namespace Zombono.Scenes
             }
 
             Lightning.Renderer.SetCurrentCamera(new Camera(CameraType.Follow));
+
+            Lightning.Renderer.AddRenderable(new TextBlock("DemoText", "Map Prototype Scene - this is a demonstration of the map loader", "DebugFont", new(300, 300), Color.Yellow));
         }
 
         public override void SwitchFrom(Scene newScene)
@@ -68,11 +70,7 @@ namespace Zombono.Scenes
 
         public override void Render()
         {
-
-
-            TextManager.DrawText("Map Prototype Scene - this is a demonstration of the map loader", "DebugFont", new(300, 300), Color.Yellow);
-
-
+            
         }
     }
 }

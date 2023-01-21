@@ -47,8 +47,7 @@ namespace Zombono
 
             if (magic != Magic)
             {
-                NCError.ShowErrorBox($"Invalid map file - magic not found (expected {Magic}, got {magic}!)", 2000, 
-                    "MapFileHeader::Read - failed to find format indicator");
+                NCLogging.LogError($"Invalid map file - magic not found (expected {Magic}, got {magic}!)", 2000, NCLoggingSeverity.Error);
             }
 
             byte formatVersionMajor = stream.ReadByte();
@@ -57,8 +56,8 @@ namespace Zombono
             if (formatVersionMajor != FormatVersionMajor
                 || formatVersionMinor != FormatVersionMinor)
             {
-                NCError.ShowErrorBox($"Invalid map file - incorrect file format version (expected {FormatVersionMajor}.{FormatVersionMinor}, " +
-                    $"got {formatVersionMajor}.{formatVersionMinor}!)", 2001, "MapFileHeader::Read - failed to find format indicator");
+                NCLogging.LogError($"Invalid map file - incorrect file format version (expected {FormatVersionMajor}.{FormatVersionMinor}, " +
+                    $"got {formatVersionMajor}.{formatVersionMinor}!)", 2001, NCLoggingSeverity.Error);
             }
 
             return new MapFileHeader

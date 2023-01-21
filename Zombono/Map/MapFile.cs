@@ -22,15 +22,13 @@
         {
             if (!File.Exists(Path))
             {
-                NCError.ShowErrorBox("Error - tried to load invalid map file", 2402, 
-                    "MapFile::Path property does not exist during call to MapFile::Read!", NCErrorSeverity.FatalError);
+                NCLogging.LogError("Error - tried to load invalid map file", 2402, NCLoggingSeverity.FatalError);
                 return;
             }
 
             if (!Path.Contains(".zmap")) // move to localsettings?
             {
-                NCError.ShowErrorBox("Filename must be a zmap file!", 2404,
-                    "MapFile::Path property does not contain the string '.zmap'", NCErrorSeverity.FatalError);
+                NCLogging.LogError("Filename must be a zmap file!", 2404, NCLoggingSeverity.FatalError);
             }
 
             try
@@ -63,7 +61,7 @@
             }
             catch (Exception ex)
             {
-                NCError.ShowErrorBox($"An error occurred loading map tiles.", 2403, "An exception occurred in MapFile::Read", NCErrorSeverity.FatalError, ex);
+                NCLogging.LogError($"An error occurred loading map tiles.", 2403, NCLoggingSeverity.FatalError, ex);
             }
         }
 
@@ -71,8 +69,7 @@
         {
             if (!Uri.IsWellFormedUriString(Path, UriKind.RelativeOrAbsolute))
             {
-                NCError.ShowErrorBox($"Tried to write to invalid path {Path}!", 2405, 
-                    "Call to Uri::IsWellFormedUriStrig in MapFile::Write returned FALSE", NCErrorSeverity.Error);
+                NCLogging.LogError($"Tried to write to invalid path {Path}!", 2405, NCLoggingSeverity.Error);
                 return;
             }
 
@@ -80,8 +77,8 @@
 
             if (Tiles.Count != mapTileCount)
             {
-                NCError.ShowErrorBox($"Invalid number of tiles ({Tiles.Count} recorded, vs {mapTileCount} ({Header.MapWidth}x{Header.MapHeight})", 2406,
-                    "MapTile::Tiles::Count is not equal to (MapTileHeader::MapHeight * MapTileHeader::MapWidth)", NCErrorSeverity.Error);
+                NCLogging.LogError($"Invalid number of tiles ({Tiles.Count} recorded, vs {mapTileCount} ({Header.MapWidth}x{Header.MapHeight})", 2406,
+                    NCLoggingSeverity.Error);
                 return;
             }
 

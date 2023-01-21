@@ -18,10 +18,12 @@
         {
             try
             {
-                TextureAtlas mainSpritesheet = new("MainSpritesheet", new(SPRITESHEET_TILE_WIDTH, SPRITESHEET_TILE_HEIGHT), new(SPRITESHEET_SHEET_WIDTH, SPRITESHEET_SHEET_HEIGHT));
-                mainSpritesheet.Path = @"Content\Graphics\terrain.png";
+                TextureAtlas mainSpritesheet = Lightning.Renderer.AddRenderable(new TextureAtlas("MainSpritesheet", new(SPRITESHEET_TILE_WIDTH, SPRITESHEET_TILE_HEIGHT), 
+                    new(SPRITESHEET_SHEET_WIDTH, SPRITESHEET_SHEET_HEIGHT))
+                    { 
+                        Path = @"Content\Graphics\terrain.png"
 
-                TextureManager.AddAsset(mainSpritesheet);
+                    });
 
                 Loaded = true;
                 return true; 

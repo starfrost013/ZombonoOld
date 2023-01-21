@@ -22,7 +22,7 @@ namespace Zombono
 
         public override void SwitchTo(Scene oldScene)
         {
-            TextManager.DrawText("MainScene - the game is here", "DebugFont", new(300, 300), Color.Green);
+            Lightning.Renderer.AddRenderable(new TextBlock("TextBlockgasd", "MainScene - the game is here", "DebugFont", new(300, 300), Color.Green));
         }
 
         public override void SwitchFrom(Scene newScene)

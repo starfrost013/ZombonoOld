@@ -10,15 +10,18 @@ namespace Zombono
 
         public override void Render()
         {
+            /*
             // TEMP until NEW TEXT API
             // todo: ACTUALLY CENTRE
             TextManager.DrawText("PLACEHOLDER ALPHA MENU", "Arial.48pt", new(0, 0), Color.Red, Color.White);
             TextManager.DrawText("Zombono Alpha", "Arial.18pt", new Vector2(GlobalSettings.GraphicsResolutionX / 4, GlobalSettings.GraphicsResolutionY / 4), Color.Green);
             TextManager.DrawText("Please Enter Server IP", "Arial.18pt", new Vector2(GlobalSettings.GraphicsResolutionX / 4, GlobalSettings.GraphicsResolutionY / 3.5f), Color.Green);
+            */
         }
 
         public override void SwitchTo(Scene oldScene)
         {
+            /*
             // clear background (temp)
             Lightning.Renderer.Clear(Color.FromArgb(32, 32, 32, 32));
 
@@ -49,6 +52,7 @@ namespace Zombono
                 Position = new(GlobalSettings.GraphicsResolutionX / 4, (GlobalSettings.GraphicsResolutionY / 3) + 150),
                 Text = "Connect to Server"
             });
+            */
         }
 
         public override void SwitchFrom(Scene newScene)
