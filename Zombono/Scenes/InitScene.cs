@@ -13,11 +13,11 @@
             NCLogging.Log("Zombono SharedAssets Loading...");
             SharedAssets.Load();
 
-            string fileName = "test.zmap";
+            string fileName = @"Content\Maps\test.zmap";
 
             if (!File.Exists(fileName))
             {
-                NCLogging.Log("MapPrototypeScene needs test.zmap. It doesn't exist, so generating it.");
+                NCLogging.Log("MapPrototypeScene needs test.zmap. It doesn't exist, so generating it...");
                 // Temporary: create a test map
                 MapFile mapFile = new(fileName);
                 mapFile.Header.MapWidth = 64;
