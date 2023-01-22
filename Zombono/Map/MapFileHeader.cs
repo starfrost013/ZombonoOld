@@ -1,7 +1,4 @@
-﻿
-using System.Reflection.PortableExecutable;
-
-namespace Zombono
+﻿namespace Zombono
 {
     /// <summary>
     /// MapFileHeader
@@ -51,7 +48,7 @@ namespace Zombono
             }
 
             byte formatVersionMajor = stream.ReadByte();
-            byte formatVersionMinor = stream.ReadByte(); 
+            byte formatVersionMinor = stream.ReadByte();
 
             if (formatVersionMajor != FormatVersionMajor
                 || formatVersionMinor != FormatVersionMinor)

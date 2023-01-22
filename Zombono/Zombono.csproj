@@ -38,6 +38,8 @@
 		<None Remove="Content\Graphics\Start\Legal.png" />
 		<None Remove="Content\Graphics\Start\Title.png" />
 		<None Remove="Content\Graphics\terrain.png" />
+		<None Remove="Content\Localisation\en-GB.ini" />
+		<None Remove="Content\Maps\test.zmap" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -147,11 +149,16 @@
 		<Content Include="Content\Graphics\terrain.png">
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
+		<Content Include="Content\Localisation\en-GB.ini">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Content\Maps\test.zmap">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Folder Include="Client\" />
-	  <Folder Include="Content\Maps\" />
 	</ItemGroup>
 
 	<ItemGroup>

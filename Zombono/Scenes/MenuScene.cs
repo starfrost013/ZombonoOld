@@ -5,7 +5,7 @@ namespace Zombono
     {
         public override void Start()
         {
-            
+
         }
 
         public override void Render()
@@ -57,12 +57,12 @@ namespace Zombono
 
         public override void SwitchFrom(Scene newScene)
         {
-            
+
         }
 
         public override void Shutdown()
         {
-            
+
         }
     }
 }

@@ -14,7 +14,7 @@
         public MapFile(string path)
         {
             Path = path;
-            Header = new(); 
+            Header = new();
             Tiles = new();
         }
 
@@ -57,7 +57,7 @@
 
                 NCLogging.Log("Loading ZbObjects UNIMPLEMENTED (V0.00!!!!)");
 
-                Loaded = true; 
+                Loaded = true;
             }
             catch (Exception ex)
             {

@@ -57,7 +57,7 @@
             // the plan here is to show some logos and stuff
             // so this is not the only line of code that will ever be here
 
-            
+
             Lightning.Client.SetCurrentScene("MapPrototypeScene");
         }
     }

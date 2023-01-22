@@ -12,7 +12,7 @@ namespace Zombono
     {
         public override void Start()
         {
-            
+
         }
 
         public override void Shutdown()
@@ -32,7 +32,7 @@ namespace Zombono
 
         public override void Render()
         {
-            
+
         }
     }
 }

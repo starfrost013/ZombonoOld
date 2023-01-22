@@ -18,19 +18,19 @@
         {
             try
             {
-                TextureAtlas mainSpritesheet = Lightning.Renderer.AddRenderable(new TextureAtlas("MainSpritesheet", new(SPRITESHEET_TILE_WIDTH, SPRITESHEET_TILE_HEIGHT), 
+                TextureAtlas mainSpritesheet = Lightning.Renderer.AddRenderable(new TextureAtlas("MainSpritesheet", new(SPRITESHEET_TILE_WIDTH, SPRITESHEET_TILE_HEIGHT),
                     new(SPRITESHEET_SHEET_WIDTH, SPRITESHEET_SHEET_HEIGHT))
-                    { 
-                        Path = @"Content\Graphics\terrain.png"
+                {
+                    Path = @"Content\Graphics\terrain.png"
 
-                    });
+                });
 
                 Loaded = true;
-                return true; 
+                return true;
             }
             catch
             {
-                return false; 
+                return false;
             }
 
         }

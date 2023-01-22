@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Zombono.Scenes
+﻿namespace Zombono
 {
     /// <summary>
     /// MapPrototype
@@ -17,7 +11,7 @@ namespace Zombono.Scenes
 
         public MapPrototypeScene()
         {
-            TestMap = new("test.zmap");
+            TestMap = new(@"Content\Maps\test.zmap");
         }
 
         public override void Start()
@@ -50,7 +44,7 @@ namespace Zombono.Scenes
                 int row = tileId / TestMap.Header.MapHeight;
 
                 // set position
-                mapTile.Position = new(0 + (SharedAssets.SPRITESHEET_TILE_WIDTH * (tileId % SharedAssets.SPRITESHEET_SHEET_WIDTH)), SharedAssets.SPRITESHEET_TILE_HEIGHT * row);
+                mapTile.Position = new(0 + (SharedAssets.SPRITESHEET_TILE_WIDTH * (tileId % SharedAssets.SPRITESHEET_SHEET_WIDTH)), (SharedAssets.SPRITESHEET_TILE_HEIGHT / 2) * row);
 
                 NCLogging.Log(mapTile.Position.ToString());
 
@@ -61,6 +55,9 @@ namespace Zombono.Scenes
             Lightning.Renderer.SetCurrentCamera(new Camera(CameraType.Follow));
 
             Lightning.Renderer.AddRenderable(new TextBlock("DemoText", "Map Prototype Scene - this is a demonstration of the map loader", "DebugFont", new(300, 300), Color.Yellow));
+
+            // demo build only
+            Lightning.Renderer.Settings.Camera.Position = new(3100, 408);
         }
 
         public override void SwitchFrom(Scene newScene)
@@ -70,7 +67,8 @@ namespace Zombono.Scenes
 
         public override void Render()
         {
-            
+           Lightning.Renderer.Settings.Camera.Position = new(Lightning.Renderer.Settings.Camera.Position.X - (100 / (float)Lightning.Renderer.DeltaTime),
+                Lightning.Renderer.Settings.Camera.Position.Y - (100 / (float)Lightning.Renderer.DeltaTime));
         }
     }
 }
