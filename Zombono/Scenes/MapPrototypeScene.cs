@@ -46,8 +46,6 @@
                 // set position
                 mapTile.Position = new(0 + (SharedAssets.SPRITESHEET_TILE_WIDTH * (tileId % SharedAssets.SPRITESHEET_SHEET_WIDTH)), (SharedAssets.SPRITESHEET_TILE_HEIGHT / 2) * row);
 
-                NCLogging.Log(mapTile.Position.ToString());
-
                 // add it
                 Lightning.Renderer.AddRenderable(mapTile); // this just draws a texture atlas a lot of times
             }
