@@ -53,9 +53,6 @@
             Lightning.Renderer.SetCurrentCamera(new Camera(CameraType.Follow));
 
             Lightning.Renderer.AddRenderable(new TextBlock("DemoText", "Map Prototype Scene - this is a demonstration of the map loader", "DebugFont", new(300, 300), Color.Yellow));
-
-            // demo build only
-            Lightning.Renderer.Settings.Camera.Position = new(3100, 408);
         }
 
         public override void SwitchFrom(Scene newScene)
