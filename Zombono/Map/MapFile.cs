@@ -22,26 +22,26 @@
         {
             if (!File.Exists(Path))
             {
-                NCLogging.LogError("Error - tried to load invalid map file", 2402, NCLoggingSeverity.FatalError);
+                Logger.LogError("Error - tried to load invalid map file", 2402, LoggerSeverity.FatalError);
                 return;
             }
 
             if (!Path.Contains(".zmap")) // move to localsettings?
             {
-                NCLogging.LogError("Filename must be a zmap file!", 2404, NCLoggingSeverity.FatalError);
+                Logger.LogError("Filename must be a zmap file!", 2404, LoggerSeverity.FatalError);
             }
 
             try
             {
-                NCLogging.Log($"Loading map {Path}...");
+                Logger.Log($"Loading map {Path}...");
 
                 using (BinaryReader br = new(new FileStream(Path, FileMode.Open)))
                 {
-                    NCLogging.Log("Reading header...");
+                    Logger.Log("Reading header...");
 
                     Header = MapFileHeader.Read(br);
 
-                    NCLogging.Log("Reading map tiles...");
+                    Logger.Log("Reading map tiles...");
                     // read tiles
                     for (int y = 0; y < Header.MapHeight; y++)
                     {
@@ -55,13 +55,13 @@
 
                 // todo: read the ZbObjects!!!!!!!
 
-                NCLogging.Log("Loading ZbObjects UNIMPLEMENTED (V0.00!!!!)");
+                Logger.Log("Loading ZbObjects UNIMPLEMENTED (V0.00!!!!)");
 
                 Loaded = true;
             }
             catch (Exception ex)
             {
-                NCLogging.LogError($"An error occurred loading map tiles.", 2403, NCLoggingSeverity.FatalError, ex);
+                Logger.LogError($"An error occurred loading map tiles.", 2403, LoggerSeverity.FatalError, ex);
             }
         }
 
@@ -69,7 +69,7 @@
         {
             if (!Uri.IsWellFormedUriString(Path, UriKind.RelativeOrAbsolute))
             {
-                NCLogging.LogError($"Tried to write to invalid path {Path}!", 2405, NCLoggingSeverity.Error);
+                Logger.LogError($"Tried to write to invalid path {Path}!", 2405, LoggerSeverity.Error);
                 return;
             }
 
@@ -77,8 +77,8 @@
 
             if (Tiles.Count != mapTileCount)
             {
-                NCLogging.LogError($"Invalid number of tiles ({Tiles.Count} recorded, vs {mapTileCount} ({Header.MapWidth}x{Header.MapHeight})", 2406,
-                    NCLoggingSeverity.Error);
+                Logger.LogError($"Invalid number of tiles ({Tiles.Count} recorded, vs {mapTileCount} ({Header.MapWidth}x{Header.MapHeight})", 2406,
+                    LoggerSeverity.Error);
                 return;
             }
 

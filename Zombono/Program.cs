@@ -7,7 +7,7 @@
 
 if (args.Contains("-server".ToLowerInvariant()))
 {
-    InitServer();
+    Logger.Log("THERE IS NO FUCKING SERVER");
 }
 else
 {

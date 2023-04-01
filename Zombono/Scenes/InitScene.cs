@@ -10,14 +10,14 @@
         public override void Start()
         {
             // probably better to put this in start
-            NCLogging.Log("Zombono SharedAssets Loading...");
+            Logger.Log("Zombono SharedAssets Loading...");
             SharedAssets.Load();
 
             string fileName = @"Content\Maps\test.zmap";
 
             if (!File.Exists(fileName))
             {
-                NCLogging.Log("MapPrototypeScene needs test.zmap. It doesn't exist, so generating it...");
+                Logger.Log("MapPrototypeScene needs test.zmap. It doesn't exist, so generating it...");
                 // Temporary: create a test map
                 MapFile mapFile = new(fileName);
                 mapFile.Header.MapWidth = 64;
@@ -41,7 +41,7 @@
 
         }
 
-        public override void SwitchTo(Scene oldScene)
+        public override void SwitchTo(Scene? oldScene)
         {
 
         }
@@ -53,7 +53,7 @@
 
         public override void Render()
         {
-            NCLogging.Log("Going to MapPrototypeScene");
+            Logger.Log("Going to MapPrototypeScene");
             // the plan here is to show some logos and stuff
             // so this is not the only line of code that will ever be here
 

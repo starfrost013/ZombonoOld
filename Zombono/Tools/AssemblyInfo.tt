@@ -1,0 +1,43 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Reflection" #>
+<#@ import namespace="System.Text" #>
+<#@ output extension=".cs" #>
+// This file defines the version information - generated using the AssemblyInfo.tt T4 template in ZOMBONOBase.
+// Automatically generated file - do not modify
+
+[assembly: AssemblyVersion("<#= ZOMBONO_VERSION_MAJOR #>.<#= ZOMBONO_VERSION_MINOR #>.<#= ZOMBONO_VERSION_REVISION #>.<#= ZOMBONO_VERSION_BUILD #>")]
+[assembly: AssemblyFileVersion("<#= ZOMBONO_VERSION_MAJOR #>.<#= ZOMBONO_VERSION_MINOR #>.<#= ZOMBONO_VERSION_REVISION #>.<#= ZOMBONO_VERSION_BUILD #>")]
+[assembly: AssemblyInformationalVersion("<#= ZOMBONO_VERSION_EXTENDED_STRING #>")]
+[assembly: AssemblyTitle("Zombono")]
+
+namespace Zombono
+{
+	public static class ZombonoVersion
+	{
+		public const int ZOMBONO_VERSION_MAJOR = <#= ZOMBONO_VERSION_MAJOR #>;
+		public const int ZOMBONO_VERSION_MINOR = <#= ZOMBONO_VERSION_MINOR #>; 
+		public const int ZOMBONO_VERSION_REVISION = <#= ZOMBONO_VERSION_REVISION #>;
+		public const int ZOMBONO_VERSION_BUILD = <#= ZOMBONO_VERSION_BUILD #>;
+		public const string ZOMBONO_VERSION_SPECIFIER = "<#= ZOMBONO_VERSION_SPECIFIER #>";
+		public const string ZOMBONO_VERSION_STRING = "<#= ZOMBONO_VERSION_STRING #>";
+		public const string ZOMBONO_VERSION_BUILD_STRING = "<#= ZOMBONO_VERSION_BUILD_STRING #>";
+		public static string ZOMBONO_VERSION_EXTENDED_STRING = "<#= ZOMBONO_VERSION_EXTENDED_STRING #>";
+	}
+}
+
+<#+
+
+public static int ZOMBONO_VERSION_MAJOR = 0;
+public static int ZOMBONO_VERSION_MINOR = 0; 
+public static int ZOMBONO_VERSION_REVISION = 1;
+public static int ZOMBONO_VERSION_BUILD = (DateTime.UtcNow - new DateTime(2023, 03, 31)).Days;
+
+public static string ZOMBONO_VERSION_SPECIFIER = " (Pre-Alpha Test Build 1.0)";
+public static string ZOMBONO_VERSION_STRING = $"{ZOMBONO_VERSION_MAJOR}.{ZOMBONO_VERSION_MINOR}.{ZOMBONO_VERSION_REVISION}{ZOMBONO_VERSION_SPECIFIER}";
+public static string ZOMBONO_VERSION_BUILD_STRING = $"{ZOMBONO_VERSION_MAJOR}.{ZOMBONO_VERSION_MINOR}.{ZOMBONO_VERSION_REVISION}.{ZOMBONO_VERSION_BUILD}";
+public static string ZOMBONO_VERSION_EXTENDED_STRING = $"{ZOMBONO_VERSION_STRING} build {ZOMBONO_VERSION_BUILD}, built {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}";
+
+#>

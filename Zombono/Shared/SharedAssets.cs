@@ -2,7 +2,7 @@
 {
     internal static class SharedAssets
     {
-        internal static TextureAtlas? MainSpritesheet => (TextureAtlas?)Lightning.Renderer.GetRenderableByName("MainSpritesheet"); //todo: texturemanager
+        internal static TextureAtlas? MainSpritesheet;
 
         // TEMP?
         internal const int SPRITESHEET_TILE_WIDTH = 32;
@@ -18,7 +18,7 @@
         {
             try
             {
-                TextureAtlas mainSpritesheet = Lightning.Renderer.AddRenderable(new TextureAtlas("MainSpritesheet", new(SPRITESHEET_TILE_WIDTH, SPRITESHEET_TILE_HEIGHT),
+                MainSpritesheet = Lightning.Renderer.AddRenderable(new TextureAtlas("MainSpritesheet", new(SPRITESHEET_TILE_WIDTH, SPRITESHEET_TILE_HEIGHT),
                     new(SPRITESHEET_SHEET_WIDTH, SPRITESHEET_SHEET_HEIGHT))
                 {
                     Path = @"Content\Graphics\terrain.png"

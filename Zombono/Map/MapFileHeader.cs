@@ -44,7 +44,7 @@
 
             if (magic != Magic)
             {
-                NCLogging.LogError($"Invalid map file - magic not found (expected {Magic}, got {magic}!)", 2000, NCLoggingSeverity.Error);
+                Logger.LogError($"Invalid map file - magic not found (expected {Magic}, got {magic}!)", 2000, LoggerSeverity.Error);
             }
 
             byte formatVersionMajor = stream.ReadByte();
@@ -53,8 +53,8 @@
             if (formatVersionMajor != FormatVersionMajor
                 || formatVersionMinor != FormatVersionMinor)
             {
-                NCLogging.LogError($"Invalid map file - incorrect file format version (expected {FormatVersionMajor}.{FormatVersionMinor}, " +
-                    $"got {formatVersionMajor}.{formatVersionMinor}!)", 2001, NCLoggingSeverity.Error);
+                Logger.LogError($"Invalid map file - incorrect file format version (expected {FormatVersionMajor}.{FormatVersionMinor}, " +
+                    $"got {formatVersionMajor}.{formatVersionMinor}!)", 2001, LoggerSeverity.Error);
             }
 
             return new MapFileHeader

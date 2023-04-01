@@ -16,13 +16,13 @@
 
         public override void Start()
         {
-            NCLogging.Log("Zombono Version 0.00 - Map Test scene, loading test map...");
+            Logger.Log("Zombono Version 0.00 - Map Test scene, loading test map...");
 
             TestMap.Read();
 
             if (!TestMap.Loaded)
             {
-                NCLogging.Log("TESTMAP not loaded. shutting down [Temporary for v0.00 only]", ConsoleColor.Red);
+                Logger.Log("TESTMAP not loaded. shutting down [Temporary for v0.00 only]", ConsoleColor.Red);
                 Lightning.Shutdown();
             }
 
@@ -34,7 +34,7 @@
 
         }
 
-        public override void SwitchTo(Scene oldScene)
+        public override void SwitchTo(Scene? oldScene)
         {
             // again temporary (insert these into the map lol, just to display them)
             for (int tileId = 0; tileId < TestMap.Tiles.Count; tileId++)
@@ -62,8 +62,7 @@
 
         public override void Render()
         {
-           Lightning.Renderer.Settings.Camera.Position = new(Lightning.Renderer.Settings.Camera.Position.X - (100 / (float)Lightning.Renderer.DeltaTime),
-                Lightning.Renderer.Settings.Camera.Position.Y - (100 / (float)Lightning.Renderer.DeltaTime));
+
         }
     }
 }
